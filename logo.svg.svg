@@ -1,0 +1,71 @@
+<svg width="600" height="600" viewBox="0 0 680 680" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Evanston Precinct Executive logo</title>
+  <desc>Circular badge for Evanston Precinct Executive, Democratic Party, royal blue with cream diagonal stripes top-left and bottom-right.</desc>
+
+  <defs>
+    <clipPath id="mainClip">
+      <circle cx="340" cy="340" r="300"/>
+    </clipPath>
+    <clipPath id="topLeftClip">
+      <polygon points="40,40 340,40 340,340 40,340"/>
+    </clipPath>
+    <clipPath id="botRightClip">
+      <polygon points="340,340 640,340 640,640 340,640"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer dark ring -->
+  <circle cx="340" cy="340" r="310" fill="#151515"/>
+  <!-- Royal blue fill -->
+  <circle cx="340" cy="340" r="300" fill="#3D72B8"/>
+
+  <!-- Cream diagonal stripes — top-left quadrant -->
+  <g clip-path="url(#mainClip)">
+    <g clip-path="url(#topLeftClip)">
+      <g transform="translate(340,340) rotate(-42)">
+        <rect x="-320" y="-320" width="52" height="640" fill="#E8D5A3"/>
+        <rect x="-252" y="-320" width="36" height="640" fill="#E8D5A3"/>
+        <rect x="-198" y="-320" width="24" height="640" fill="#E8D5A3"/>
+        <rect x="-156" y="-320" width="16" height="640" fill="#E8D5A3"/>
+        <rect x="-122" y="-320" width="11" height="640" fill="#E8D5A3"/>
+        <rect x="-96"  y="-320" width="7"  height="640" fill="#E8D5A3"/>
+        <rect x="-76"  y="-320" width="5"  height="640" fill="#E8D5A3"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Cream diagonal stripes — bottom-right quadrant -->
+  <g clip-path="url(#mainClip)">
+    <g clip-path="url(#botRightClip)">
+      <g transform="translate(340,340) rotate(-42)">
+        <rect x="-320" y="-320" width="52" height="640" fill="#E8D5A3"/>
+        <rect x="-252" y="-320" width="36" height="640" fill="#E8D5A3"/>
+        <rect x="-198" y="-320" width="24" height="640" fill="#E8D5A3"/>
+        <rect x="-156" y="-320" width="16" height="640" fill="#E8D5A3"/>
+        <rect x="-122" y="-320" width="11" height="640" fill="#E8D5A3"/>
+        <rect x="-96"  y="-320" width="7"  height="640" fill="#E8D5A3"/>
+        <rect x="-76"  y="-320" width="5"  height="640" fill="#E8D5A3"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Off-white/cream inner circle -->
+  <circle cx="340" cy="330" r="172" fill="#FFFDF7"/>
+  <!-- Cream accent ring -->
+  <circle cx="340" cy="330" r="172" fill="none" stroke="#E8D5A3" stroke-width="5"/>
+
+  <!-- Text group centered on inner circle -->
+  <g transform="translate(340,330)">
+    <!-- Gold rule above Evanston -->
+    <rect x="-108" y="-70" width="216" height="3" rx="1.5" fill="#E8D5A3"/>
+    <!-- Evanston -->
+    <text font-family="Georgia,serif" font-weight="900" font-size="58" fill="#3D72B8" text-anchor="middle" y="-20">Evanston</text>
+    <!-- Gold rule below Evanston -->
+    <rect x="-108" y="-8" width="216" height="3" rx="1.5" fill="#E8D5A3"/>
+    <!-- PRECINCT EXECUTIVE -->
+    <text font-family="Arial,sans-serif" font-weight="800" font-size="17" fill="#3D72B8" text-anchor="middle" y="22" letter-spacing="2">PRECINCT EXECUTIVE</text>
+    <!-- Democratic Party -->
+    <text font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#3D72B8" text-anchor="middle" y="46" letter-spacing="2" opacity="0.8">Democratic Party</text>
+  </g>
+
+</svg>
