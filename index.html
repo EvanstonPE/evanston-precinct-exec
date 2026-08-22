@@ -16,6 +16,7 @@
     --dark-navy: #1a3a6b;
     --text: #1a2e4a;
     --muted: #4a6080;
+    --banner-h: 40px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -26,9 +27,48 @@
     overflow-x: hidden;
   }
 
+  /* ── LAUNCH ANNOUNCEMENT BANNER ── */
+  .launch-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+    height: var(--banner-h);
+    background: var(--dark-navy);
+    border-bottom: 2px solid var(--gold);
+    display: flex; align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .launch-banner-track {
+    display: flex; align-items: center;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+  .launch-banner-track span {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+  .launch-banner-track a {
+    color: var(--white);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .launch-banner-track { animation: none; }
+    .launch-banner { overflow-x: auto; }
+  }
+
   /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: var(--banner-h); left: 0; right: 0; z-index: 100;
     background: var(--navy);
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 40px;
@@ -83,7 +123,7 @@
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     text-align: center;
-    padding: 100px 40px 60px;
+    padding: calc(100px + var(--banner-h)) 40px 60px;
     position: relative;
     overflow: hidden;
   }
@@ -682,6 +722,41 @@
     opacity: 0.6;
   }
 
+  /* ── EVANSTON DEMS CLUB ── */
+  #dems-club { background: var(--navy); }
+  #dems-club .section-inner { text-align: center; }
+  #dems-club .section-label { color: var(--gold); }
+  #dems-club .section-title { color: var(--white); }
+  #dems-club .divider-line { background: var(--gold); margin-left: auto; margin-right: auto; }
+  #dems-club .dems-club-intro {
+    max-width: 640px; margin: 0 auto 32px;
+    color: rgba(255,255,255,0.85);
+    font-size: 16px; line-height: 1.7;
+  }
+  .dems-club-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 40px;
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    gap: 48px;
+    max-width: 820px;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+  .dems-club-logo-col { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .dems-club-logo-col img.dems-club-logo { max-width: 280px; width: 100%; height: auto; }
+  .dems-club-qr-col { display: flex; flex-direction: column; align-items: center; }
+  .dems-club-qr-col img.dems-club-qr { width: 150px; height: 150px; border-radius: 8px; border: 3px solid var(--gold); }
+  .dems-club-qr-label {
+    font-size: 12px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--navy);
+    margin-top: 10px;
+  }
+  @media (max-width: 768px) {
+    .dems-club-card { padding: 28px 24px; gap: 28px; }
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -705,6 +780,14 @@
 </style>
 </head>
 <body>
+
+<!-- LAUNCH ANNOUNCEMENT BANNER -->
+<div class="launch-banner" role="banner" aria-label="Announcement">
+  <div class="launch-banner-track">
+    <span>🎉 Announcing the launch of the Evanston Dems Club — a new home for Democrats organizing in Evanston! <a href="https://evanstondemsclub.org/" target="_blank">Learn more →</a></span>
+    <span aria-hidden="true">🎉 Announcing the launch of the Evanston Dems Club — a new home for Democrats organizing in Evanston! <a href="https://evanstondemsclub.org/" target="_blank">Learn more →</a></span>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -740,6 +823,7 @@
     <li><a href="https://evanstonprecinctexec.org/#vote">Register to Vote</a></li>
     <li><a href="https://evanstonprecinctexec.org/#resources">Resources &amp; Education</a></li>
     <li><a href="https://evanstonprecinctexec.org/#contact">Contact Us</a></li>
+    <li><a href="https://evanstonprecinctexec.org/#dems-club" style="color: var(--gold);">Dems Club</a></li>
   </ul>
 </nav>
 
@@ -1869,6 +1953,28 @@ showMap('3-D');
           <h4>Thanks for reaching out!</h4>
           <p style="color:var(--muted); margin-top:8px;">Your Precinct Executives will be in touch soon.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVANSTON DEMS CLUB -->
+<section id="dems-club">
+  <div class="section-inner">
+    <div class="section-label">Beyond Our Precinct</div>
+    <h2 class="section-title">Evanston <em style="color:var(--gold);">Dems Club</em></h2>
+    <div class="divider-line"></div>
+    <p class="dems-club-intro">
+      We're proud to help launch the <strong style="color:var(--white);">Evanston Dems Club</strong> — a new home for neighbors across Evanston to organize together, get involved, and elect the Democrats Evanston deserves.
+    </p>
+    <div class="dems-club-card">
+      <div class="dems-club-logo-col">
+        <img src="./dems-club-logo.png" alt="Evanston Dems Club" class="dems-club-logo">
+        <a href="https://evanstondemsclub.org/" target="_blank" class="btn-primary">Visit evanstondemsclub.org →</a>
+      </div>
+      <div class="dems-club-qr-col">
+        <img src="./dems-club-qr.png" alt="Scan to join the Evanston Dems Club" class="dems-club-qr">
+        <div class="dems-club-qr-label">Join Us</div>
       </div>
     </div>
   </div>
